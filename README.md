@@ -1,4 +1,4 @@
-# The-Most-Social-Network
+# The Most Social Network
 
 ## Description:
 This code is a set of API routes for a social media style website. The routes are hosted on a MongoDB database so that the website using them can grow as fast as they need to, and still be able to handle large amounts of unstructured data.
