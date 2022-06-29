@@ -2,13 +2,13 @@
 const { Schema, model, Types, trusted } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const DiscussionSchema = new Schema(
+const ReactionSchema = new Schema(
     {
-        discussId: {
+        reactionId: {
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId()
         },
-        discussBody: {
+        reactionBody: {
             type: String,
             required: true,
             maxlength: 280
@@ -49,7 +49,7 @@ const ThoughtSchema = new Schema(
             type: String,
             required: true
         },
-        reactions: [DiscussionSchema]
+        reactions: [ReactionSchema]
     },
     {
         toJSON: {
@@ -61,7 +61,7 @@ const ThoughtSchema = new Schema(
 );
 
 // Implements temp data storage for discuss Count
-ThoughtSchema.virtual('discussCount').get(function() {
+ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length
 });
 
