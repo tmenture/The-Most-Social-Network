@@ -1,7 +1,7 @@
 const { User, Thought } = require('../models');
 
 const thoughtController = {
-    // gets all thoughts 
+    // Gets all thoughts 
     getAllThoughts(req, res) {
         Thought.find({})
             .populate({
@@ -16,7 +16,7 @@ const thoughtController = {
                 res.sendStatus(400);
             });
     },
-
+    // Gets thoughts by id
     getThoughtById({ params }, res) {
         Thought.findOne({ _id: params.id })
         .populate({
@@ -37,7 +37,7 @@ const thoughtController = {
             res.sendStatus(400);
         });
     },
-
+    // Creates thoughts
     createThought({ body }, res) {
         Thought.create(body)
             .then(({ _id }) => {
@@ -56,7 +56,7 @@ const thoughtController = {
             })
             .catch(err => res.json(err));
     },
-
+    // Allows user to update thoughts
     updateThought({ params, body }, res) {
         Thought.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
             .then(dbThoughtData => {
@@ -68,7 +68,7 @@ const thoughtController = {
             })
             .catch(err => res.json(err)); 
     },
-
+    // Allows user to delete thoughts
     deleteThought({ params }, res) {
         Thought.findOneAndDelete({ _id: params.id })
             .then(dbThoughtData => {
@@ -91,7 +91,7 @@ const thoughtController = {
             })
             .catch(err => res.json(err));
     },
-
+    // Creates a reply to start a discussion
     createDiscussion({ params, body }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
@@ -109,7 +109,7 @@ const thoughtController = {
         })
         .catch(err => res.status(400).json(err));
     },
-
+    // Deletes reply
     deleteDiscussion({ params }, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId },
@@ -126,5 +126,5 @@ const thoughtController = {
         .catch(err => res.json(err));
     }
 };
-
+// Exports thought controller
 module.exports = thoughtController;
