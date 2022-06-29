@@ -2,7 +2,7 @@
 const { Schema, model, Types, trusted } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const DiscussSchema = new Schema(
+const DiscussionSchema = new Schema(
     {
         discussId: {
             type: Schema.Types.ObjectId,
@@ -49,7 +49,7 @@ const ThoughtSchema = new Schema(
             type: String,
             required: true
         },
-        reactions: [DiscussSchema]
+        reactions: [DiscussionSchema]
     },
     {
         toJSON: {
