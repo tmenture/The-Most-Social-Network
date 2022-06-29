@@ -14,6 +14,13 @@ From here you can interact with the routes through Insomnia or similar applicati
 ## Link To Video Demonstration:
 
 
+## Built With:
+* Node.js
+    - express
+    - mongoose
+* MongoDB
+* JavaScript
+
 ## Created By:
 #### Thomas Menture
 - Contact Info - thomasoxemail@gmail.com
