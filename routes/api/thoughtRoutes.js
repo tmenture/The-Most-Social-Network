@@ -23,4 +23,5 @@ router.route('/:thoughtId/reactions').post(createDiscussion);
 // Delete route to delete a reply from a discusison
 router.route('/:thoughtId/reactions/:reactionId').delete(deleteDiscussion);
 
+// Exporting the routes
 module.exports = router;
