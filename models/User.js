@@ -37,7 +37,7 @@ const UserSchema = new Schema(
 );
 
 // Implements temp data storage for a friend count 
-UserSchema.virtual('friendCount'),get(function() {
+UserSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });
 
