@@ -5,7 +5,7 @@ const userController = {
     // Gets all users
     getUsers(req, res) {
         User.find({})
-            .select('-_v')
+            .select('-__v')
             .sort({ _id: -1 })
             .then(dbUserData => res.json(dbUserData))
             .catch(err => {
@@ -19,11 +19,11 @@ const userController = {
         User.findOne({ _id: params.id })
             .populate({ 
                 path: 'thoughts',
-                select: '-_v'
+                select: '-__v'
             })
             .populate({
                 path: 'friends',
-                select: '-_v'
+                select: '-__v'
             })
             .then(dbUserData => {
                 if (!dbUserData) {
@@ -47,7 +47,7 @@ const userController = {
 
     // Update user info
     updateUser({ params, body }, res) {
-        User.findOneAndUpdate({ _id: parms.id }, body, { new: true, runValidators: true })
+        User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
             .then(dbUserData => {
                 if (!dbUserData) {
                     res.status(404).json({ message: 'No userFound with that id' });
@@ -62,7 +62,7 @@ const userController = {
     deleteUser({ params }, res) {
         Thought.deleteMany({ userId: params.id })
             .then(() => {
-                User.findOneAndDelete({ uderId: params.id })
+                User.findOneAndDelete({ userId: params.id })
                     .then(dbUserData => {
                         if (!dbUserData) {
                             res.status(404).json({ message: 'No user found with that id' });
