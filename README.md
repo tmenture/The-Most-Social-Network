@@ -11,8 +11,12 @@ This code is a set of API routes for a social media style website. The routes ar
 
 From here you can interact with the routes through Insomnia or similar applications. 
 
-## Link To Video Demonstration:
+## Link To Video Demonstrations:
 
+[User Routes Demo]()    
+[Thought Routes Demo]()     
+[Friend Routes Demo]()  
+[Reaction Routes Demo]() 
 
 ## Built With:
 * Node.js
