@@ -62,7 +62,7 @@ const userController = {
     deleteUser({ params }, res) {
         Thought.deleteMany({ userId: params.id })
             .then(() => {
-                User.findOneAndDelete({ userId: params.id })
+                User.findOneAndDelete({ uderId: params.id })
                     .then(dbUserData => {
                         if (!dbUserData) {
                             res.status(404).json({ message: 'No user found with that id' });
@@ -81,9 +81,11 @@ const userController = {
             { $push: { friends: params.friendId } },
             { new: true }
         )
+        .populate({ path: 'friends', select: '-__v' })
+        .select('-__v')
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with that id' });
+                res.status(404).json({ message: 'No user with that id' });
                 return;
             }
             res.json(dbUserData);
