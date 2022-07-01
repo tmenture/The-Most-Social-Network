@@ -15,8 +15,8 @@ From here you can interact with the routes through Insomnia or similar applicati
 
 [User Routes Demo](https://youtu.be/z1PXYk6qDww)    
 [Thought Routes Demo](https://youtu.be/u7wBYGG4cQc)     
-[Friend Routes Demo](https://youtu.be/eckmgASYX7s)  
 [Reaction Routes Demo](https://youtu.be/E7M7uEETE6Q) 
+[Friend Routes Demo](https://youtu.be/eckmgASYX7s)
 
 ## Built With:
 * Node.js
