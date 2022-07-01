@@ -18,7 +18,7 @@ router.route('/').get(getUsers).post(createUser);
 router.route('/:id').get(getUserById).put(updateUser).delete(deleteUser);
 
 // Post and delete route for adding or removing friends
-router.route('/:userId/friends/:friendsId').post(addFriend).delete(deleteFriend);
+router.route('/:id/friends/:friendId').post(addFriend).delete(deleteFriend);
 
 // Exporting the routes
 module.exports = router;
