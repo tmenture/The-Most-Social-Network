@@ -13,10 +13,10 @@ From here you can interact with the routes through Insomnia or similar applicati
 
 ## Link To Video Demonstrations:
 
-[User Routes Demo]()    
-[Thought Routes Demo]()     
-[Friend Routes Demo]()  
-[Reaction Routes Demo]() 
+[User Routes Demo](https://youtu.be/z1PXYk6qDww)    
+[Thought Routes Demo](https://youtu.be/u7wBYGG4cQc)     
+[Friend Routes Demo](https://youtu.be/eckmgASYX7s)  
+[Reaction Routes Demo](https://youtu.be/E7M7uEETE6Q) 
 
 ## Built With:
 * Node.js
